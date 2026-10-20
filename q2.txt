@@ -1,0 +1,23 @@
+2.1 If the screen is 800x600, then the center is 400, 300. Then a rectangle with half the screens width and height, but centered 
+on the screen would have the bounds left = 200, right = 600, top = 150, bottom = 450. We can use these as vertex positions for
+the points of the two triangles.
+The vertices of the top left triangle are: (200, 150), (200, 450), (600, 150). 
+The vertices of the bottom right triangle are: (600, 150), (200, 450), (600,450).
+
+2.2 Each vertex position has two coordinates. Using floats, each position requires 2 * 4 = 8 bytes.
+Without an index buffer: 6 vertices × 8 bytes = 48 bytes.
+With an index buffer: 4 unique vertices × 8 bytes + 6 indices × 4 bytes = 56 bytes.
+For this single rectangle, the index-buffer approach actually uses 8 more bytes if only position data and indices are counted.
+
+With doubles, positions use 16 bytes each:
+Without indices: 6 × 16 = 96 bytes.
+With indices: 4 × 16 + 6 × 4 = 88 bytes.
+The indexed version saves 8 bytes with doubles. In general, index buffers become more beneficial when vertices are reused 
+enough times to offset the extra index storage.
+
+2.3 For point (500, 301)
+u = (500-200)/400 = 0.75
+v = (301-150)/300 = 0.05033
+
+so uv = (0.75, 0.5033)
+

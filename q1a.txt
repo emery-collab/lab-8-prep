@@ -1,0 +1,3 @@
+Since the y-axis points down in SFML, if we increase theta in the rotation matrix,
+we will get a clockwise rotation. Otherwise, if the y-axis pointed up, we would get
+a counterclockwise rotation.
