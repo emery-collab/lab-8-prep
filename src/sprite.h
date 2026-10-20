@@ -28,7 +28,7 @@ public:
         // TODO
         states.texture = mTexture;
         recomputeVertexArray();
-        target.draw(mVertexArray, states)
+        target.draw(mVertexArray, states);
     }
 
     sf::Vector2f& position() { return mTransform.translation; }
